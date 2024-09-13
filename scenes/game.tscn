@@ -17,7 +17,3 @@ skew = 0.537561
 [node name="TileMap" type="TileMap" parent="Camera2D"]
 tile_set = SubResource("TileSet_gwso4")
 format = 2
-
-[node name="TowerDefenseTile246" type="Sprite2D" parent="."]
-position = Vector2(266.861, 161.824)
-scale = Vector2(4.95049, 3.11035)
