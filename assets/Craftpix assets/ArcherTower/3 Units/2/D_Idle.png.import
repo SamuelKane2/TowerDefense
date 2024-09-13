@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f4ca1g5mxlbm"
-path="res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"
+uid="uid://dcdg7l275ycfg"
+path="res://.godot/imported/D_Idle.png-ef7a700dcc4cce67dc74554a47e1c6f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FieldsTileset.png"
-dest_files=["res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"]
+source_file="res://assets/Craftpix assets/ArcherTower/3 Units/2/D_Idle.png"
+dest_files=["res://.godot/imported/D_Idle.png-ef7a700dcc4cce67dc74554a47e1c6f8.ctex"]
 
 [params]
 

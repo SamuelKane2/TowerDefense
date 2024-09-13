@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f4ca1g5mxlbm"
-path="res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"
+uid="uid://bqvhwr73kvkbl"
+path="res://.godot/imported/D_Special.png-1a14baea82b8036557c51eea2a03a269.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FieldsTileset.png"
-dest_files=["res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"]
+source_file="res://assets/Craftpix assets/Enemies/Bosses/Rat/D_Special.png"
+dest_files=["res://.godot/imported/D_Special.png-1a14baea82b8036557c51eea2a03a269.ctex"]
 
 [params]
 

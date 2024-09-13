@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f4ca1g5mxlbm"
-path="res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"
+uid="uid://ciugmsgks5x4p"
+path="res://.godot/imported/U_Walk.png-749b2a417ac76ba62b484f549967eb34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FieldsTileset.png"
-dest_files=["res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"]
+source_file="res://assets/Craftpix assets/Citizens/3/U_Walk.png"
+dest_files=["res://.godot/imported/U_Walk.png-749b2a417ac76ba62b484f549967eb34.ctex"]
 
 [params]
 

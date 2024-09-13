@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f4ca1g5mxlbm"
-path="res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"
+uid="uid://c0fuak5ehjq64"
+path="res://.godot/imported/D_Special.png-d5a8a66f4b3b6c8ce0eda8fc87551b53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FieldsTileset.png"
-dest_files=["res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"]
+source_file="res://assets/Craftpix assets/Enemies/Slime/D_Special.png"
+dest_files=["res://.godot/imported/D_Special.png-d5a8a66f4b3b6c8ce0eda8fc87551b53.ctex"]
 
 [params]
 

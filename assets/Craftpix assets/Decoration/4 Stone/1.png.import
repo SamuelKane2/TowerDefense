@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f4ca1g5mxlbm"
-path="res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"
+uid="uid://cse6j1hd8faru"
+path="res://.godot/imported/1.png-2c81c027c0ec237cd6a7a4efa7c48245.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FieldsTileset.png"
-dest_files=["res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"]
+source_file="res://assets/Craftpix assets/Decoration/4 Stone/1.png"
+dest_files=["res://.godot/imported/1.png-2c81c027c0ec237cd6a7a4efa7c48245.ctex"]
 
 [params]
 

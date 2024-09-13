@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f4ca1g5mxlbm"
-path="res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"
+uid="uid://775o8mi0cvjs"
+path="res://.godot/imported/U_Death.png-27c981451d6cc1ba928017e9ddb0a96a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FieldsTileset.png"
-dest_files=["res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"]
+source_file="res://assets/Craftpix assets/Enemies/Slime/U_Death.png"
+dest_files=["res://.godot/imported/U_Death.png-27c981451d6cc1ba928017e9ddb0a96a.ctex"]
 
 [params]
 

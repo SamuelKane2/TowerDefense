@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f4ca1g5mxlbm"
-path="res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"
+uid="uid://4hkmn8ggtpd8"
+path="res://.godot/imported/S_Special.png-85f0b7ddd01b2563d9cf6e7e7a5bacde.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FieldsTileset.png"
-dest_files=["res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"]
+source_file="res://assets/Craftpix assets/Enemies/Bosses/HorseBack/S_Special.png"
+dest_files=["res://.godot/imported/S_Special.png-85f0b7ddd01b2563d9cf6e7e7a5bacde.ctex"]
 
 [params]
 

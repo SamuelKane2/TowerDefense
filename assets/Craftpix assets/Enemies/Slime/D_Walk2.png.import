@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f4ca1g5mxlbm"
-path="res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"
+uid="uid://dwv3ciktti6qm"
+path="res://.godot/imported/D_Walk2.png-57a24d1c4409686b2f9a5214305d4b10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FieldsTileset.png"
-dest_files=["res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"]
+source_file="res://assets/Craftpix assets/Enemies/Slime/D_Walk2.png"
+dest_files=["res://.godot/imported/D_Walk2.png-57a24d1c4409686b2f9a5214305d4b10.ctex"]
 
 [params]
 

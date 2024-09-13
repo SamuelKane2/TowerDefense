@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f4ca1g5mxlbm"
-path="res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"
+uid="uid://c08f5h3x2nio1"
+path="res://.godot/imported/turret_01_mk2.png-8793c8efbb549da6410313a7e49e9bf7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FieldsTileset.png"
-dest_files=["res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"]
+source_file="res://assets/Turrets/turret_01_mk2.png"
+dest_files=["res://.godot/imported/turret_01_mk2.png-8793c8efbb549da6410313a7e49e9bf7.ctex"]
 
 [params]
 

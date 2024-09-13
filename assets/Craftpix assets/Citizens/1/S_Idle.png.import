@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f4ca1g5mxlbm"
-path="res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"
+uid="uid://dh11ibfsscbl6"
+path="res://.godot/imported/S_Idle.png-30ec512ef7d307ede5adb96c7bd6e745.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FieldsTileset.png"
-dest_files=["res://.godot/imported/FieldsTileset.png-78fa0c2388241bff6a2de7b42374fc01.ctex"]
+source_file="res://assets/Craftpix assets/Citizens/1/S_Idle.png"
+dest_files=["res://.godot/imported/S_Idle.png-30ec512ef7d307ede5adb96c7bd6e745.ctex"]
 
 [params]
 
