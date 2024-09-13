@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://shq241vkb66e"]
+
+[ext_resource type="Texture2D" uid="uid://uu65oi6y2b62" path="res://assets/ArcherTower/2 Idle/3.png" id="1_a5cpf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2xv1"]
+atlas = ExtResource("1_a5cpf")
+region = Rect2(0, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1wcq"]
+atlas = ExtResource("1_a5cpf")
+region = Rect2(70, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mwox"]
+atlas = ExtResource("1_a5cpf")
+region = Rect2(140, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvukp"]
+atlas = ExtResource("1_a5cpf")
+region = Rect2(210, 0, 70, 130)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fihod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2xv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1wcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mwox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvukp")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="ArcherTower" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fihod")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.405771
