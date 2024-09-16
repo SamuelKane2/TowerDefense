@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ycllial6m0a6"
-path="res://.godot/imported/Gun-Sprite-Sheet.png-c155776bd280d61e60a5a986c1371207.ctex"
+uid="uid://cd3koqpsxsk0r"
+path="res://.godot/imported/towerDefense_tile228.png-ca55fe4f266669de369931a3901fb36f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Gun-Sprite-Sheet.png"
-dest_files=["res://.godot/imported/Gun-Sprite-Sheet.png-c155776bd280d61e60a5a986c1371207.ctex"]
+source_file="res://assets/Turrets/towerDefense_tile228.png"
+dest_files=["res://.godot/imported/towerDefense_tile228.png-ca55fe4f266669de369931a3901fb36f.ctex"]
 
 [params]
 

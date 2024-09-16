@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3c7ov7j45ftb"
-path="res://.godot/imported/Character-and-Zombie.png-8f372ab47e60b5503d21f0e164bf459a.ctex"
+uid="uid://cj4j80hglt4qp"
+path="res://.godot/imported/BigFire.png-12f57529b09adc22f66158c5984f2177.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Character-and-Zombie.png"
-dest_files=["res://.godot/imported/Character-and-Zombie.png-8f372ab47e60b5503d21f0e164bf459a.ctex"]
+source_file="res://assets/Turrets/BigFire.png"
+dest_files=["res://.godot/imported/BigFire.png-12f57529b09adc22f66158c5984f2177.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck8lfq1v7hfav"
-path="res://.godot/imported/Towers.png-68fc144b138ae852149aca5f27a07d4f.ctex"
+uid="uid://s0npw6yn755s"
+path="res://.godot/imported/LongFire.png-6d2c9e06d511c55c755119e9d24a72c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Towers.png"
-dest_files=["res://.godot/imported/Towers.png-68fc144b138ae852149aca5f27a07d4f.ctex"]
+source_file="res://assets/Turrets/LongFire.png"
+dest_files=["res://.godot/imported/LongFire.png-6d2c9e06d511c55c755119e9d24a72c7.ctex"]
 
 [params]
 
