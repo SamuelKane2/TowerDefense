@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfn7gnk1kor5e"]
+
+[ext_resource type="PackedScene" uid="uid://cnev21ywpc628" path="res://scenes/man_green.tscn" id="1_jvwka"]
+
+[sub_resource type="Curve2D" id="Curve2D_rey3w"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -627, -172, 0, 0, 0, 0, -505, -171, 0, 0, 0, 0, -469, -130, 0, 0, 0, 0, -452, -30, 0, 0, 0, 0, -418, 11, 0, 0, 0, 0, -401, 109, 0, 0, 0, 0, -370, 157, 0, 0, 0, 0, -222, 168, 0, 0, 0, 0, -169, 121, 0, 0, 0, 0, -164, 24, 0, 0, 0, 0, -71, -71, 0, 0, 0, 0, -15, -76, 0, 0, 0, 0, 68, -164, 0, 0, 0, 0, 210, -171, 0, 0, 0, 0, 268, -124, 0, 0, 0, 0, 414, -118, 0, 0, 0, 0, 462, -73, 0, 0, 0, 0, 635, -72)
+}
+point_count = 18
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_rey3w")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(-627, -172)
+rotation = 0.00819654
+scale = Vector2(1, 1)
+
+[node name="man_green" parent="PathFollow2D" instance=ExtResource("1_jvwka")]
+position = Vector2(628.389, 166.855)
+rotation = -0.00819654
+scale = Vector2(1, 1)

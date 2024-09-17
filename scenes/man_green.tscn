@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnev21ywpc628"]
+[gd_scene load_steps=4 format=3 uid="uid://cnev21ywpc628"]
 
+[ext_resource type="Script" path="res://scripts/man_green.gd" id="1_6csvl"]
 [ext_resource type="Texture2D" uid="uid://ctr52hxb0j34t" path="res://assets/Enemies/ManGreen.png" id="1_gqxnm"]
 
-[node name="ManGreen" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_1f4m4"]
+
+[node name="man_green" type="CharacterBody2D"]
+script = ExtResource("1_6csvl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_gqxnm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1f4m4")
