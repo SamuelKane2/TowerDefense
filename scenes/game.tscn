@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3dlrmykoub1w"]
+[gd_scene load_steps=6 format=3 uid="uid://c3dlrmykoub1w"]
 
 [ext_resource type="Texture2D" uid="uid://c8y4ulft5tyr7" path="res://assets/towerDefense_tilesheet.png" id="1_1xgvt"]
 [ext_resource type="Script" path="res://scripts/path_spawner.gd" id="2_4q3q5"]
+[ext_resource type="PackedScene" uid="uid://3abmq6wyepeh" path="res://scenes/RedTurret.tscn" id="3_6av6h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_chqs8"]
 texture = ExtResource("1_1xgvt")
@@ -4381,5 +4382,10 @@ script = ExtResource("2_4q3q5")
 
 [node name="Timer" type="Timer" parent="PathSpawner"]
 autostart = true
+
+[node name="Towers" type="Node2D" parent="."]
+
+[node name="RedTurret" parent="." instance=ExtResource("3_6av6h")]
+position = Vector2(-136, -90)
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
