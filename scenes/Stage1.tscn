@@ -16,5 +16,5 @@ position = Vector2(-627, -172)
 rotation = 0.00819654
 
 [node name="GreenMan" parent="PathFollow2D" instance=ExtResource("1_tb5vp")]
-position = Vector2(-0.0164795, -1.99992)
+position = Vector2(-2.57008e-05, -2.98023e-06)
 rotation = -0.00819654
