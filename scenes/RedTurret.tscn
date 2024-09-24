@@ -15,7 +15,7 @@ script = ExtResource("1_uj3mt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4oso2")
 
-[node name="Area" type="Marker2D" parent="."]
+[node name="Aim" type="Marker2D" parent="."]
 position = Vector2(24, 0)
 
 [node name="BigRocketStand" type="Sprite2D" parent="."]
@@ -27,7 +27,7 @@ texture = ExtResource("2_3ocuc")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Tower"]
 shape = SubResource("CircleShape2D_lc7qk")
 
-[node name="Node" type="Node" parent="."]
+[node name="BulletContainer" type="Node" parent="."]
 
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]

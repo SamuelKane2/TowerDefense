@@ -4381,7 +4381,14 @@ layer_0/tile_data = PackedInt32Array(196602, 65536, 3, 196604, 65536, 4, -196620
 script = ExtResource("2_4q3q5")
 
 [node name="Timer" type="Timer" parent="PathSpawner"]
+wait_time = 0.167
 autostart = true
+
+[node name="RedTurret" parent="PathSpawner" instance=ExtResource("3_6av6h")]
+position = Vector2(-147, -105)
+
+[node name="RedTurret2" parent="PathSpawner" instance=ExtResource("3_6av6h")]
+position = Vector2(-82, 43)
 
 [node name="Towers" type="Node2D" parent="."]
 
