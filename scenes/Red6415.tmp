@@ -31,4 +31,3 @@ shape = SubResource("CircleShape2D_lc7qk")
 
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
-[connection signal="ready" from="Tower" to="." method="_on_tower_ready"]

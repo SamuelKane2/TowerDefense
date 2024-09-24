@@ -16,3 +16,7 @@ func _on_tower_body_entered(body):
 
 func _on_tower_body_exited(body):
 	print("Something exited")
+
+
+func _on_tower_ready() -> void:
+	print("Ready")
