@@ -7,12 +7,12 @@ var currTargets = []
 var curr
 
 func _on_tower_body_entered(body: Node2D) -> void:
-	print(body.name)
 	if body.name == "GreenMan":
 		var tempArray = []
 		currTargets = get_node("Tower").get_overlapping_bodies()
-
-		print(currTargets)
-
+		for i in currTargets:
+			if "GreenMan" in i.name:
+				tempArray.append(i)
+		
 func _on_tower_body_exited(body):
 	pass

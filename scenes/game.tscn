@@ -4383,9 +4383,9 @@ script = ExtResource("2_4q3q5")
 [node name="Timer" type="Timer" parent="PathSpawner"]
 autostart = true
 
-[node name="RedTurret" parent="." instance=ExtResource("3_6av6h")]
-position = Vector2(-245, 84)
-
 [node name="Towers" type="Node2D" parent="."]
+
+[node name="RedTurret" parent="Towers" instance=ExtResource("3_6av6h")]
+position = Vector2(-252, 88)
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
