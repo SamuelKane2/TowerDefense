@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3dlrmykoub1w"]
+[gd_scene load_steps=7 format=3 uid="uid://c3dlrmykoub1w"]
 
 [ext_resource type="Texture2D" uid="uid://c8y4ulft5tyr7" path="res://assets/towerDefense_tilesheet.png" id="1_1xgvt"]
 [ext_resource type="Script" path="res://scripts/path_spawner.gd" id="2_4q3q5"]
@@ -4368,6 +4368,9 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_chqs8")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wkbij"]
+radius = 224.0
+
 [node name="Game" type="Node2D"]
 position = Vector2(576, 325)
 
@@ -4384,8 +4387,16 @@ script = ExtResource("2_4q3q5")
 autostart = true
 
 [node name="RedTurret" parent="." instance=ExtResource("3_6av6h")]
-position = Vector2(-245, 84)
+position = Vector2(107, -88)
 
 [node name="Towers" type="Node2D" parent="."]
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-19, -29)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-295, 130)
+shape = SubResource("CircleShape2D_wkbij")
+
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="RedTurret" method="_on_area_2d_body_entered"]

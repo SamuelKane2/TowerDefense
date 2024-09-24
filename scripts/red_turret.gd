@@ -6,17 +6,13 @@ var pathName
 var currTargets = []
 var curr
 
-func _on_tower_body_entered(body):
-	print("Something entered")
-	if "ManGreen" in body.name:
-		print("Green entered")
-		print(currTargets)
+func _on_tower_body_entered(body: Node2D) -> void:
+	print(body.name)
+	if body.name == "GreenMan":
 		var tempArray = []
 		currTargets = get_node("Tower").get_overlapping_bodies()
 
+		print(currTargets)
+
 func _on_tower_body_exited(body):
-	print("Something exited")
-
-
-func _on_tower_ready() -> void:
-	print("Ready")
+	pass
