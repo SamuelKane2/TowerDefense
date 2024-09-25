@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cccrdlemdtnfp"]
 
-[ext_resource type="Texture2D" uid="uid://cwoos4ugv0kn2" path="res://assets/Turrets/BigRocket.png" id="1_427h2"]
 [ext_resource type="Script" path="res://scripts/big_rocket.gd" id="1_pfu2o"]
+[ext_resource type="Texture2D" uid="uid://cbfdfapax4ntq" path="res://assets/Turrets/SmallRocket.png" id="2_jyn6e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6hghw"]
 height = 38.0
@@ -11,6 +11,7 @@ radius = 13.0
 height = 44.0
 
 [node name="BigRocket" type="CharacterBody2D"]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_pfu2o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -18,10 +19,11 @@ position = Vector2(-1, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_6hghw")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="SmallRocket" type="Sprite2D" parent="."]
+position = Vector2(-1.25, 9.09495e-13)
 rotation = 1.5708
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_427h2")
+scale = Vector2(1, 1)
+texture = ExtResource("2_jyn6e")
 
 [node name="Area2D" type="Area2D" parent="."]
 
