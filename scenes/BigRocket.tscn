@@ -22,7 +22,6 @@ shape = SubResource("CapsuleShape2D_6hghw")
 [node name="SmallRocket" type="Sprite2D" parent="."]
 position = Vector2(-1.25, 9.09495e-13)
 rotation = 1.5708
-scale = Vector2(1, 1)
 texture = ExtResource("2_jyn6e")
 
 [node name="Area2D" type="Area2D" parent="."]

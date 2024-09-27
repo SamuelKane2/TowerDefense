@@ -4389,13 +4389,13 @@ autostart = true
 [node name="Towers" type="Node2D" parent="."]
 
 [node name="RedTurret" parent="Towers" instance=ExtResource("3_6av6h")]
-position = Vector2(-252, 88)
+position = Vector2(-254, 86)
 
 [node name="RedTurret2" parent="Towers" instance=ExtResource("3_6av6h")]
-position = Vector2(-147, -105)
+position = Vector2(-157, -107)
 
 [node name="RedTurret3" parent="Towers" instance=ExtResource("3_6av6h")]
-position = Vector2(-82, 43)
+position = Vector2(-86, 55)
 
 [node name="UI" parent="." instance=ExtResource("4_de3qt")]
 
