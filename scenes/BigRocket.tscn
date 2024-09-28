@@ -11,7 +11,7 @@ radius = 13.0
 height = 44.0
 
 [node name="BigRocket" type="CharacterBody2D"]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(1.35, 1.35)
 script = ExtResource("1_pfu2o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

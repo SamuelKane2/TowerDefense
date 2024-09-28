@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://3abmq6wyepeh"]
+[gd_scene load_steps=7 format=3 uid="uid://3abmq6wyepeh"]
 
 [ext_resource type="Script" path="res://scripts/red_turret.gd" id="1_uj3mt"]
 [ext_resource type="Texture2D" uid="uid://b1lrx8fjffbe" path="res://assets/Turrets/BigRocketTurret.png" id="2_3ocuc"]
@@ -8,9 +8,18 @@
 size = Vector2(36, 36)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lc7qk"]
-radius = 168.19
+radius = 130.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tj1ti"]
+bg_color = Color(1, 0.298039, 0, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+corner_detail = 20
 
 [node name="RedTurret" type="StaticBody2D"]
+scale = Vector2(1.7, 1.7)
 script = ExtResource("1_uj3mt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -41,6 +50,15 @@ texture = ExtResource("3_rt68j")
 shape = SubResource("CircleShape2D_lc7qk")
 
 [node name="BulletContainer" type="Node" parent="."]
+
+[node name="Area" type="Panel" parent="."]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 0.313726)
+offset_left = -130.0
+offset_top = -130.0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tj1ti")
 
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]

@@ -2,19 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://cnev21ywpc628" path="res://scenes/ManGreen.tscn" id="1_tb5vp"]
 
-[sub_resource type="Curve2D" id="Curve2D_rey3w"]
+[sub_resource type="Curve2D" id="Curve2D_3uua4"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -627, -172, 0, 0, 0, 0, -505, -171, 0, 0, 0, 0, -469, -130, 0, 0, 0, 0, -452, -30, 0, 0, 0, 0, -418, 11, 0, 0, 0, 0, -401, 109, 0, 0, 0, 0, -363, 162, 0, 0, 0, 0, -221, 165, 0, 0, 0, 0, -169, 121, 0, 0, 0, 0, -164, 24, 0, 0, 0, 0, -71, -71, 0, 0, 0, 0, -15, -76, 0, 0, 0, 0, 68, -164, 0, 0, 0, 0, 210, -171, 0, 0, 0, 0, 268, -124, 0, 0, 0, 0, 414, -118, 0, 0, 0, 0, 462, -73, 0, 0, 0, 0, 635, -72)
+"points": PackedVector2Array(0, 0, 0, 0, -800, -229, 0, 0, 0, 0, -672, -229, 0, 0, 0, 0, -608, -165, 0, 0, 0, 0, -608, -37, 0, 0, 0, 0, -544, 27, 0, 0, 0, 0, -544, 155, 0, 0, 0, 0, -480, 219, 0, 0, 0, 0, -288, 219, 0, 0, 0, 0, -224, 155, 0, 0, 0, 0, -224, 27, 0, 0, 0, 0, -96, -101, 0, 0, 0, 0, -32, -101, 0, 0, 0, 0, 96, -229, 0, 0, 0, 0, 288, -229, 0, 0, 0, 0, 352, -165, 0, 0, 0, 0, 544, -165, 0, 0, 0, 0, 608, -101, 0, 0, 0, 0, 816, -101)
 }
 point_count = 18
 
 [node name="Path2D" type="Path2D"]
-curve = SubResource("Curve2D_rey3w")
+position = Vector2(0, 5)
+curve = SubResource("Curve2D_3uua4")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(-627, -172)
-rotation = 0.00819654
+position = Vector2(-800, -229)
 
-[node name="GreenMan" parent="PathFollow2D" instance=ExtResource("1_tb5vp")]
-position = Vector2(-2.57008e-05, -2.98023e-06)
-rotation = -0.00819654
+[node name="ManGreen" parent="PathFollow2D" instance=ExtResource("1_tb5vp")]
