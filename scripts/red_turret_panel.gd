@@ -4,7 +4,6 @@ extends Panel
 #var currTile
 
 func _on_gui_input(event:InputEvent) -> void:
-	print("Anything")
 	print(event)
 	#var tempTower = tower.instantiate()
 	#if event is InputEventMouseButton and event.button_mask == 1:
