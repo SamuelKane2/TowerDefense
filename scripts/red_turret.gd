@@ -14,12 +14,12 @@ func _process(_delta):
 			get_node("BulletContainer").get_child(i).queue_free()
 
 func _on_tower_body_entered(body: Node2D) -> void:
-	if body.name == "GreenMan":
+	if body.name == "ManGreen":
 		var tempArray = []
 		currTargets = get_node("Tower").get_overlapping_bodies()
 		
 		for i in currTargets:
-			if "GreenMan" in i.name:
+			if "ManGreen" in i.name:
 				tempArray.append(i)
 		var currTarget = null
 		
