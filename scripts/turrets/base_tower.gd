@@ -2,7 +2,7 @@ extends StaticBody2D
 
 class_name BulletTower
 
-var Bullet: PackedScene
+var bullet
 var bulletDamange = 5
 var pathName
 var currTargets = []
@@ -35,7 +35,7 @@ func _on_tower_body_entered(body: Node2D) -> void:
 		curr = currTarget
 		pathName = currTarget.get_parent().name
 		
-		var tempBullet = Bullet.instantiate()
+		var tempBullet = bullet.instantiate()
 		tempBullet.pathName = pathName
 		tempBullet.bulletDamage = bulletDamange
 		get_node("BulletContainer").add_child(tempBullet)
