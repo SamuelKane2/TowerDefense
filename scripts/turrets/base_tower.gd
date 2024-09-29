@@ -2,11 +2,14 @@ extends StaticBody2D
 
 class_name BulletTower
 
-var bullet
 var bulletDamange = 5
 var pathName
 var currTargets = []
 var curr
+var bullet: PackedScene
+
+func _init(newbullet):
+	bullet = newbullet
 
 func _process(_delta):
 	if is_instance_valid(curr):

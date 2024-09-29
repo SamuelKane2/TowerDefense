@@ -1,4 +1,6 @@
 extends BulletTower
 
-func _onready():
-	bullet = preload("res://scenes/Turrets/BigBullet.tscn")
+class_name oneRocket
+
+func _init().("res://scenes/Turrets/BigBullet.tscn"):
+	pass
