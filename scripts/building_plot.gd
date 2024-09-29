@@ -8,3 +8,7 @@ func _on_panel_gui_input(event: InputEvent) -> void:
 				towerPath.get_child(i).get_node("Build/Build").hide()
 		get_node("Build/Build").visible = !get_node("Build/Build").visible
 		get_node("Build/Build").global_position = self.position + Vector2(576,325)
+
+func _on_one_rocket_panel_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_mask == 1 and event.button_index == 1:
+		print("yes")

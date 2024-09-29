@@ -4383,6 +4383,7 @@ layer_1/name = "Layer1"
 script = ExtResource("2_4q3q5")
 
 [node name="Timer" type="Timer" parent="PathSpawner"]
+wait_time = 4.0
 autostart = true
 
 [node name="Towers" type="Node2D" parent="."]
