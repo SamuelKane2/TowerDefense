@@ -14,7 +14,6 @@ scale = Vector2(1.4, 1.4)
 script = ExtResource("1_8caun")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sxhr4")
 
 [node name="Aim" type="Marker2D" parent="."]
