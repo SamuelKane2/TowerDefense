@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://sxayfx0nk1kc"]
+
+[ext_resource type="Script" path="res://scripts/big_rocket.gd" id="1_ghgwe"]
+[ext_resource type="Texture2D" uid="uid://cwoos4ugv0kn2" path="res://assets/Turrets/BigRocket.png" id="2_sak5x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gfdrg"]
+radius = 11.1111
+height = 47.4074
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_leody"]
+radius = 14.0741
+height = 53.3333
+
+[node name="BigRocket" type="CharacterBody2D"]
+rotation = 1.5708
+scale = Vector2(1.35, 1.35)
+script = ExtResource("1_ghgwe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_gfdrg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sak5x")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_leody")

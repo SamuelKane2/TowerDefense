@@ -39,6 +39,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_0cfi0")
 [node name="Build" type="Node" parent="."]
 
 [node name="Build" type="Node2D" parent="Build"]
+visible = false
 
 [node name="OneRocket" type="Node2D" parent="Build/Build"]
 
@@ -63,7 +64,7 @@ horizontal_alignment = 1
 
 [node name="TwoRockets" type="Node2D" parent="Build/Build"]
 
-[node name="Panel2" type="Panel" parent="Build/Build/TwoRockets"]
+[node name="TwoTocketsPanel" type="Panel" parent="Build/Build/TwoRockets"]
 offset_left = 40.0
 offset_top = 40.0
 offset_right = 120.0
@@ -128,3 +129,4 @@ horizontal_alignment = 1
 
 [connection signal="gui_input" from="Panel" to="." method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Build/Build/OneRocket/OneRocketPanel" to="." method="_on_one_rocket_panel_gui_input"]
+[connection signal="gui_input" from="Build/Build/TwoRockets/TwoTocketsPanel" to="." method="_on_two_tockets_panel_gui_input"]

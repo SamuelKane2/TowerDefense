@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3dlrmykoub1w"]
+[gd_scene load_steps=6 format=3 uid="uid://c3dlrmykoub1w"]
 
 [ext_resource type="Texture2D" uid="uid://c8y4ulft5tyr7" path="res://assets/towerDefense_tilesheet.png" id="1_1xgvt"]
 [ext_resource type="Script" path="res://scripts/path_spawner.gd" id="2_4q3q5"]
 [ext_resource type="PackedScene" uid="uid://2j2sd0phkq6m" path="res://scenes/BuildingPlot.tscn" id="4_bgmca"]
-[ext_resource type="PackedScene" uid="uid://bpshp783i3h4f" path="res://scenes/ui.tscn" id="4_de3qt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_chqs8"]
 texture = ExtResource("1_1xgvt")
@@ -4383,12 +4382,10 @@ layer_1/name = "Layer1"
 script = ExtResource("2_4q3q5")
 
 [node name="Timer" type="Timer" parent="PathSpawner"]
-wait_time = 4.0
+wait_time = 3.0
 autostart = true
 
 [node name="Towers" type="Node2D" parent="."]
-
-[node name="UI" parent="." instance=ExtResource("4_de3qt")]
 
 [node name="BuildingPlots" type="Node2D" parent="."]
 

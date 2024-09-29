@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ihs1t3o7rcee"]
+[gd_scene load_steps=5 format=3 uid="uid://6fuqeqce5pt6"]
 
 [ext_resource type="Script" path="res://scripts/one_rocket.gd" id="1_8caun"]
 [ext_resource type="Texture2D" uid="uid://dr2034urlamv1" path="res://assets/Turrets/1Rocket.png" id="2_rdxgw"]
@@ -8,14 +8,6 @@ size = Vector2(36, 36)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ah00k"]
 radius = 130.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_luere"]
-bg_color = Color(1, 0.298039, 0, 1)
-corner_radius_top_left = 1024
-corner_radius_top_right = 1024
-corner_radius_bottom_right = 1024
-corner_radius_bottom_left = 1024
-corner_detail = 20
 
 [node name="OneRocket" type="StaticBody2D"]
 scale = Vector2(1.4, 1.4)
@@ -35,16 +27,3 @@ texture = ExtResource("2_rdxgw")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Tower"]
 shape = SubResource("CircleShape2D_ah00k")
-
-[node name="Area" type="Panel" parent="."]
-modulate = Color(0, 0, 0, 0.313726)
-offset_left = -130.0
-offset_top = -130.0
-offset_right = 130.0
-offset_bottom = 130.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_luere")
-
-[node name="BulletContainer" type="Node" parent="."]
-
-[connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
-[connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
