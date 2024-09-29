@@ -1,23 +1,20 @@
 extends StaticBody2D
 
-var Bullet = preload("res://scenes/Turrets/BigRocket.tscn")
+@onready var fire: Sprite2D = $Fire
+
 var bulletDamange = 5
 var pathName
 var currTargets = []
 var curr
 
-func _ready():
-	get_node("BulletContainer")
-
 func _process(_delta):
 	if is_instance_valid(curr):
 		self.look_at(curr.global_position)
-	else:
-		for i in get_node("BulletContainer").get_child_count():
-			get_node("BulletContainer").get_child(i).queue_free()
 
 func _on_tower_body_entered(body: Node2D) -> void:
 	if body.name == "ManGreen":
+		
+
 		var tempArray = []
 		currTargets = get_node("Tower").get_overlapping_bodies()
 		
@@ -35,12 +32,10 @@ func _on_tower_body_entered(body: Node2D) -> void:
 		
 		curr = currTarget
 		pathName = currTarget.get_parent().name
-		
-		var tempBullet = Bullet.instantiate()
-		tempBullet.pathName = pathName
-		tempBullet.bulletDamage = bulletDamange
-		get_node("BulletContainer").add_child(tempBullet)
-		tempBullet.global_position = $Aim.global_position
+	
 		
 func _on_tower_body_exited(_body):
 	currTargets = get_node("Tower").get_overlapping_bodies()
+
+func _on_timer_timeout() -> void:
+	fire.visible = false

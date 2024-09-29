@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://3abmq6wyepeh"]
 
-[ext_resource type="Script" path="res://scripts/red_turret.gd" id="1_uj3mt"]
-[ext_resource type="Texture2D" uid="uid://c4grry5j7tvtl" path="res://assets/Turrets/2RocketBig.png" id="2_gvevr"]
+[ext_resource type="Script" path="res://scripts/turrets/two_rockets.gd" id="1_h4php"]
+[ext_resource type="Texture2D" uid="uid://c4grry5j7tvtl" path="res://assets/Turrets/2RocketBig.png" id="2_kmnco"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4oso2"]
-size = Vector2(34.2857, 45.7143)
+size = Vector2(55, 41.4286)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lc7qk"]
 radius = 130.0
@@ -17,9 +17,9 @@ corner_radius_bottom_right = 1024
 corner_radius_bottom_left = 1024
 corner_detail = 20
 
-[node name="RedTurret" type="StaticBody2D"]
+[node name="TwoRockets" type="StaticBody2D"]
 scale = Vector2(1.4, 1.4)
-script = ExtResource("1_uj3mt")
+script = ExtResource("1_h4php")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.80993e-06, 1.02179e-06)
@@ -30,7 +30,7 @@ position = Vector2(24, 0)
 
 [node name="BigRocketStand" type="Sprite2D" parent="."]
 rotation = 1.5708
-texture = ExtResource("2_gvevr")
+texture = ExtResource("2_kmnco")
 
 [node name="Tower" type="Area2D" parent="."]
 

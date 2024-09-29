@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ihs1t3o7rcee"]
+[gd_scene load_steps=6 format=3 uid="uid://bmj7u36ebybmi"]
 
-[ext_resource type="Script" path="res://scripts/one_rocket.gd" id="1_8caun"]
+[ext_resource type="Script" path="res://scripts/turrets/one_rocket.gd" id="1_8caun"]
 [ext_resource type="Texture2D" uid="uid://dr2034urlamv1" path="res://assets/Turrets/1Rocket.png" id="2_rdxgw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sxhr4"]
@@ -37,6 +37,7 @@ texture = ExtResource("2_rdxgw")
 shape = SubResource("CircleShape2D_ah00k")
 
 [node name="Area" type="Panel" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 0.313726)
 offset_left = -130.0
 offset_top = -130.0

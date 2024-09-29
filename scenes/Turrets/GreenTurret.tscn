@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://inp75hxheadg"]
+[gd_scene load_steps=7 format=3 uid="uid://bdwlqvil84beg"]
 
-[ext_resource type="Script" path="res://scripts/turrets/two_rockets.gd" id="1_uj3mt"]
-[ext_resource type="Texture2D" uid="uid://c4grry5j7tvtl" path="res://assets/Turrets/2RocketBig.png" id="2_gvevr"]
+[ext_resource type="Script" path="res://scripts/turrets/green_turret.gd" id="1_j750v"]
+[ext_resource type="Texture2D" uid="uid://cfiptdwsuk38l" path="res://assets/Turrets/MediumFire.png" id="2_0cvq7"]
+[ext_resource type="Texture2D" uid="uid://m67u38esv5e1" path="res://assets/Turrets/GreenTurret.png" id="2_mvkhj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4oso2"]
-size = Vector2(34.2857, 45.7143)
+size = Vector2(55, 41.4286)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lc7qk"]
 radius = 130.0
@@ -17,27 +18,27 @@ corner_radius_bottom_right = 1024
 corner_radius_bottom_left = 1024
 corner_detail = 20
 
-[node name="RedTurret" type="StaticBody2D"]
+[node name="GreenTurret" type="StaticBody2D"]
 scale = Vector2(1.4, 1.4)
-script = ExtResource("1_uj3mt")
+script = ExtResource("1_j750v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.80993e-06, 1.02179e-06)
+position = Vector2(-1.07142, -1.02179e-06)
 shape = SubResource("RectangleShape2D_4oso2")
 
-[node name="Aim" type="Marker2D" parent="."]
-position = Vector2(24, 0)
-
-[node name="BigRocketStand" type="Sprite2D" parent="."]
+[node name="Fire" type="Sprite2D" parent="."]
+position = Vector2(40, 0)
 rotation = 1.5708
-texture = ExtResource("2_gvevr")
+texture = ExtResource("2_0cvq7")
+
+[node name="Turret" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_mvkhj")
 
 [node name="Tower" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Tower"]
 shape = SubResource("CircleShape2D_lc7qk")
-
-[node name="BulletContainer" type="Node" parent="."]
 
 [node name="Area" type="Panel" parent="."]
 unique_name_in_owner = true
@@ -48,6 +49,9 @@ offset_right = 130.0
 offset_bottom = 130.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tj1ti")
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
 [connection signal="ready" from="Tower" to="." method="_on_tower_ready"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

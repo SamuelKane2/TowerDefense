@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cccrdlemdtnfp"]
 
-[ext_resource type="Script" path="res://scripts/small_rocket.gd" id="1_er4vx"]
+[ext_resource type="Script" path="res://scripts/turrets/bullets/small_rocket.gd" id="1_er4vx"]
 [ext_resource type="Texture2D" uid="uid://cbfdfapax4ntq" path="res://assets/Turrets/SmallRocket.png" id="2_pquu4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6hghw"]

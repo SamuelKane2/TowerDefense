@@ -1,16 +1,14 @@
 extends StaticBody2D
 
-var Bullet = preload("res://scenes/Turrets/SmallRocket.tscn")
+class_name BulletTower
+
+var Bullet: PackedScene
 var bulletDamange = 5
 var pathName
 var currTargets = []
 var curr
 
-
 func _process(_delta):
-	print(get_children())
-	print("SEPARATE--------------------------")
-	
 	if is_instance_valid(curr):
 		self.look_at(curr.global_position)
 	else:
