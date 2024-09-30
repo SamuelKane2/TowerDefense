@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpbi8ujgo6m3j"]
+[gd_scene load_steps=6 format=3 uid="uid://cpbi8ujgo6m3j"]
 
 [ext_resource type="Script" path="res://scripts/turrets/one_rocket.gd" id="1_8caun"]
 [ext_resource type="Texture2D" uid="uid://dr2034urlamv1" path="res://assets/Turrets/1Rocket.png" id="2_rdxgw"]
+[ext_resource type="PackedScene" uid="uid://sxayfx0nk1kc" path="res://scenes/Turrets/BigBullet.tscn" id="2_xbq7d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sxhr4"]
 size = Vector2(36, 36)
@@ -12,6 +13,7 @@ radius = 130.0
 [node name="OneRocket" type="StaticBody2D"]
 scale = Vector2(1.4, 1.4)
 script = ExtResource("1_8caun")
+bullet = ExtResource("2_xbq7d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sxhr4")

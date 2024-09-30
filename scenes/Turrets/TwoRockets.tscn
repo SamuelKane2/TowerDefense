@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://3abmq6wyepeh"]
+[gd_scene load_steps=7 format=3 uid="uid://3abmq6wyepeh"]
 
 [ext_resource type="Script" path="res://scripts/turrets/two_rockets.gd" id="1_h4php"]
 [ext_resource type="Texture2D" uid="uid://c4grry5j7tvtl" path="res://assets/Turrets/2RocketBig.png" id="2_kmnco"]
+[ext_resource type="PackedScene" uid="uid://cccrdlemdtnfp" path="res://scenes/Turrets/SmallBullet.tscn" id="2_omhkc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4oso2"]
 size = Vector2(55, 41.4286)
@@ -20,6 +21,7 @@ corner_detail = 20
 [node name="TwoRockets" type="StaticBody2D"]
 scale = Vector2(1.4, 1.4)
 script = ExtResource("1_h4php")
+bullet = ExtResource("2_omhkc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.80993e-06, 1.02179e-06)

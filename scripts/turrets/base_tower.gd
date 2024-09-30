@@ -6,7 +6,8 @@ var bulletDamange = 5
 var pathName
 var currTargets = []
 var curr
-var bullet: PackedScene
+
+@export var bullet: PackedScene
 
 func _init(newbullet):
 	bullet = newbullet
