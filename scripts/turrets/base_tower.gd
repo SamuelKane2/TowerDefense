@@ -7,10 +7,7 @@ var pathName
 var currTargets = []
 var curr
 
-@export var bullet: PackedScene
-
-func _init(newbullet):
-	bullet = newbullet
+@export var Bullet: PackedScene
 
 func _process(_delta):
 	if is_instance_valid(curr):
@@ -39,7 +36,7 @@ func _on_tower_body_entered(body: Node2D) -> void:
 		curr = currTarget
 		pathName = currTarget.get_parent().name
 		
-		var tempBullet = bullet.instantiate()
+		var tempBullet = Bullet.instantiate()
 		tempBullet.pathName = pathName
 		tempBullet.bulletDamage = bulletDamange
 		get_node("BulletContainer").add_child(tempBullet)

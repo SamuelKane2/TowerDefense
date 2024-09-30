@@ -10,7 +10,7 @@ func _on_panel_gui_input(event: InputEvent) -> void:
 		get_node("Build/Build").global_position = self.position + Vector2(576,325)
 
 # Creating the towers
-var OneRocketScene = preload("res://scenes/OneRocket.tscn")
+var OneRocketScene = preload("res://scenes/Turrets/OneRocket.tscn")
 
 func _on_one_rocket_panel_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_mask == 1 and event.button_index == 1:
@@ -30,3 +30,4 @@ func _on_two_tockets_panel_gui_input(event: InputEvent) -> void:
 		tempTower.position = self.position
 		get_node("Build").get_parent().visible = false
 		get_node("Build/Build").visible = false
+
