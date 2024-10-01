@@ -56,7 +56,7 @@ func _on_tower_body_exited(_body):
 func _on_timer_timeout() -> void:
 	Shoot()
 
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_mask == 1 and event.button_index == 1:
 		var towerPath = get_tree().get_root().get_node("Game/Towers")
 		# Later
@@ -75,16 +75,13 @@ func _on_upgrade_pressed() -> void:
 	timesDone += 1
 	
 	if timesDone <= 4:
-		reload += 0.333
-		timer.wait_time = 3 - reload
+		reload += 0.33
+		timer.wait_time = 2 - reload
 		
 		# power
 		bulletDamage += 2
-	else:
-		# Do something visually to make upgrading not possible
-		var k
 		
-	#print("timesDone: " + str(timesDone))
-	#print("reload: " + str(reload))
-	#print("damage: " + str(bulletDamage))
-	#print("------------------------------------------------")
+	print("timesDone: " + str(timesDone))
+	print("reload: " + str(reload))
+	print("damage: " + str(bulletDamage))
+	print("------------------------------------------------")

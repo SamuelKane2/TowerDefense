@@ -33,7 +33,6 @@ texture = ExtResource("2_0cvq7")
 
 [node name="Aim" type="Marker2D" parent="."]
 position = Vector2(24, 0)
-scale = Vector2(1, 1)
 
 [node name="Turret" type="Sprite2D" parent="."]
 rotation = 1.5708

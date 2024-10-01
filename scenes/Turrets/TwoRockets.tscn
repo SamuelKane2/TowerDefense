@@ -9,7 +9,7 @@
 size = Vector2(34.2857, 45.7143)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lc7qk"]
-radius = 130.0
+radius = 122.145
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tj1ti"]
 bg_color = Color(1, 0.298039, 0, 1)
@@ -77,8 +77,8 @@ script = ExtResource("3_k0fnn")
 [node name="BulletContainer" type="Node" parent="."]
 
 [node name="Range" type="Node2D" parent="."]
+visible = false
 position = Vector2(-130, -130)
-scale = Vector2(1, 1)
 
 [node name="Area" type="Panel" parent="Range"]
 modulate = Color(0, 0, 0, 0.313726)
@@ -91,7 +91,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_tj1ti")
 [node name="Upgrade" type="Node" parent="."]
 
 [node name="Upgrade" type="Node2D" parent="Upgrade"]
-scale = Vector2(1, 1)
+visible = false
 
 [node name="Panel" type="Panel" parent="Upgrade/Upgrade"]
 offset_left = -40.0
@@ -112,6 +112,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5ebyx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cinm5")
 
 [node name="Label" type="Label" parent="Upgrade/Upgrade/Panel"]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 54.0
 offset_right = 64.0

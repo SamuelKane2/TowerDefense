@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends enemy
 
 @export var speed = 50
 var Health = 20
@@ -10,4 +10,7 @@ func _process(delta: float) -> void:
 		queue_free()
 	
 	if Health <= 0:
+		print("Death")
+		_addCoins(10)
 		get_parent().get_parent().queue_free()
+		

@@ -1,14 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpbi8ujgo6m3j"]
+[gd_scene load_steps=12 format=3 uid="uid://cpbi8ujgo6m3j"]
 
 [ext_resource type="Script" path="res://scripts/turrets/one_rocket.gd" id="1_8caun"]
 [ext_resource type="Texture2D" uid="uid://dr2034urlamv1" path="res://assets/Turrets/1Rocket.png" id="2_rdxgw"]
-[ext_resource type="PackedScene" uid="uid://sxayfx0nk1kc" path="res://scenes/Turrets/BigBullet.tscn" id="2_xbq7d"]
+[ext_resource type="Script" path="res://scripts/turrets/progress_bar.gd" id="3_2lwvi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sxhr4"]
 size = Vector2(36, 36)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ah00k"]
-radius = 130.0
+radius = 160.714
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hafo"]
 bg_color = Color(1, 0.298039, 0, 1)
@@ -18,10 +18,43 @@ corner_radius_bottom_right = 1024
 corner_radius_bottom_left = 1024
 corner_detail = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_od23n"]
+bg_color = Color(0.717647, 0.717647, 0.717647, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.501961, 0.501961, 0.501961, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bklpw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knsu8"]
+bg_color = Color(0.717647, 0.717647, 0.717647, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.601223, 0.601223, 0.601223, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlx6j"]
+bg_color = Color(0.564962, 0.564962, 0.564961, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.6, 0.6, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uh3j7"]
+bg_color = Color(0.717647, 0.717647, 0.717647, 1)
+
 [node name="OneRocket" type="StaticBody2D"]
 scale = Vector2(1.4, 1.4)
+input_pickable = true
 script = ExtResource("1_8caun")
-Bullet = ExtResource("2_xbq7d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sxhr4")
@@ -40,9 +73,11 @@ shape = SubResource("CircleShape2D_ah00k")
 
 [node name="BulletContainer" type="Node" parent="."]
 
-[node name="Area" type="Panel" parent="."]
-unique_name_in_owner = true
+[node name="Range" type="Node2D" parent="."]
 visible = false
+scale = Vector2(1, 1)
+
+[node name="Area" type="Panel" parent="Range"]
 modulate = Color(0, 0, 0, 0.313726)
 offset_left = -130.0
 offset_top = -130.0
@@ -50,5 +85,58 @@ offset_right = 130.0
 offset_bottom = 130.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7hafo")
 
+[node name="Upgrade" type="Node" parent="."]
+
+[node name="Upgrade" type="Node2D" parent="Upgrade"]
+visible = false
+
+[node name="Panel" type="Panel" parent="Upgrade/Upgrade"]
+offset_left = -40.0
+offset_top = -128.0
+offset_right = 40.0
+offset_bottom = -48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_od23n")
+
+[node name="Upgrade" type="Button" parent="Upgrade/Upgrade/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 9.0
+offset_right = 64.0
+offset_bottom = 56.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bklpw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_knsu8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nlx6j")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uh3j7")
+
+[node name="Label" type="Label" parent="Upgrade/Upgrade/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 54.0
+offset_right = 64.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 16
+text = "200"
+horizontal_alignment = 1
+
+[node name="Polygon2D" type="Polygon2D" parent="Upgrade/Upgrade/Panel"]
+position = Vector2(31.5625, 52)
+scale = Vector2(1.07031, 1)
+color = Color(0.589096, 0.589096, 0.589095, 1)
+polygon = PackedVector2Array(-1.90735e-06, -1.52588e-05, -1.90735e-06, -24, -8, -24, 8, -40, 24, -24, 16, -24, 16, -1.52588e-05)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = -63.0
+offset_top = -55.0
+offset_right = 68.0
+offset_bottom = -28.0
+script = ExtResource("3_2lwvi")
+
+[node name="Timer" type="Timer" parent="ProgressBar"]
+wait_time = 2.0
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
+[connection signal="pressed" from="Upgrade/Upgrade/Panel/Upgrade" to="." method="_on_upgrade_pressed"]
+[connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
