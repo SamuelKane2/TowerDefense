@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://c8y4ulft5tyr7" path="res://assets/towerDefense_tilesheet.png" id="1_1xgvt"]
 [ext_resource type="Script" path="res://scripts/path_spawner.gd" id="2_4q3q5"]
+[ext_resource type="PackedScene" uid="uid://c1bi7gjbdwbxg" path="res://scenes/UI.tscn" id="4_6d3bs"]
 [ext_resource type="PackedScene" uid="uid://2j2sd0phkq6m" path="res://scenes/BuildingPlot.tscn" id="4_bgmca"]
-[ext_resource type="PackedScene" uid="uid://bdwlqvil84beg" path="res://scenes/Turrets/GreenTurret.tscn" id="4_os5js"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_chqs8"]
 texture = ExtResource("1_1xgvt")
@@ -4402,7 +4402,10 @@ position = Vector2(-96, -189)
 [node name="BuildingPlot4" parent="BuildingPlots" instance=ExtResource("4_bgmca")]
 position = Vector2(-48, 99)
 
-[node name="GreenTurret" parent="." instance=ExtResource("4_os5js")]
-position = Vector2(-336, -53)
+[node name="UI" parent="." instance=ExtResource("4_6d3bs")]
+offset_left = -576.0
+offset_top = -326.0
+offset_right = -513.0
+offset_bottom = -293.0
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]

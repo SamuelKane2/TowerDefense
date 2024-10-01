@@ -26,8 +26,7 @@ func _on_two_tockets_panel_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_mask == 1 and event.button_index == 1:
 		var tempTower = TwoRocketsScene.instantiate()
 		get_parent().get_parent().get_node("Towers").add_child(tempTower)
-		tempTower.get_node("Area").visible = false
+		tempTower.get_node("Range").visible = false
 		tempTower.position = self.position
 		get_node("Build").get_parent().visible = false
 		get_node("Build/Build").visible = false
-

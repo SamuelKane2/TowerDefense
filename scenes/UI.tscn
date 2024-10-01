@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1bi7gjbdwbxg"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_qn18c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ajq6"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qn18c")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 920.0
+offset_top = 604.0
+offset_right = 1152.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6ajq6")
+
+[node name="Label" type="Label" parent="Panel"]
+unique_name_in_owner = true
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 69.0
+offset_bottom = 36.0
+theme_override_font_sizes/font_size = 20
+text = "Coins: "
