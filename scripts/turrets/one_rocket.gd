@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends BulletTower
 
 var Bullet = preload("res://scenes/Turrets/BigBullet.tscn")
 var bulletDamage = 10
@@ -11,8 +11,11 @@ var range = 400
 @onready var timer = get_node("ProgressBar/Timer")
 var startShooting = false
 
+@onready var upgrade_panel: Panel = $UpgradedLevel/UpgradedLevel/UpgradePanel
+
 func _process(_delta):
-	# This is the position of the upgrade button, it is unrelated to the other code
+	# This are positions unrelated to the other code
+	upgrade_panel.global_position = self.position + Vector2(596,358)
 	get_node("Upgrade/Upgrade").global_position = self.position + Vector2(576,325)
 	
 	if is_instance_valid(curr):
@@ -56,31 +59,44 @@ func _on_tower_body_exited(_body):
 func _on_timer_timeout() -> void:
 	Shoot()
 
-func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_mask == 1 and event.button_index == 1:
-		var towerPath = get_tree().get_root().get_node("Game/Towers")
-		# Later
-		#get_node("Range").visible = !get_node("Range").visible
-		for i in towerPath.get_child_count():
-			if towerPath.get_child(i).name != self.name:
-				towerPath.get_child(i).get_node("Upgrade/Upgrade").hide()
-		get_node("Upgrade/Upgrade").visible = !get_node("Upgrade/Upgrade").visible
-
 # To limit upgrading to 4 times
 var timesDone = 0
 
+# Indicating upgrade level
+@onready var upgrade_label: Label = $UpgradedLevel/UpgradedLevel/UpgradePanel/UpgradeLabel
+
 func _on_upgrade_pressed() -> void:
-	
-	# reloading
+
 	timesDone += 1
-	
-	if timesDone <= 4:
-		reload += 0.3
-		timer.wait_time = 4 - reload
+	if timesDone == 1:
+		upgrade_label.text = "II"
+		upgrade_label.global_position = self.position + Vector2(601,355)
+		Game.gold -= 200
 		
+	if timesDone == 2:
+		upgrade_label.text = "III"
+		upgrade_label.global_position = self.position + Vector2(599,355)
+		Game.gold -= 200
+		
+	if timesDone == 3:
+		upgrade_label.text = "IV"
+		Game.gold -= 200
+		
+	if timesDone == 4:
+		upgrade_label.text = "V"
+		upgrade_label.global_position = self.position + Vector2(601,355)
+		Game.gold -= 200
+		
+	if timesDone <= 4:
+		#reload speed
+		reload += 0.25
+		timer.wait_time = 4 - reload
 		# power
 		bulletDamage += 8
-	print("timesDone: " + str(timesDone))
-	print("reload: " + str(reload))
-	print("damage: " + str(bulletDamage))
-	print("------------------------------------------------")
+		
+	else:
+		pass
+	#print("timesDone: " + str(timesDone))
+	#print("reload: " + str(reload))
+	#print("damage: " + str(bulletDamage))
+	#print("------------------------------------------------")

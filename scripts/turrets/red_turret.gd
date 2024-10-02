@@ -1,6 +1,6 @@
 extends BulletTower
 
-var Bullet = preload("res://scenes/Turrets/InvisibleBullet.tscn")
+var Bullet = preload("res://scenes/Turrets/SmallBullet.tscn")
 var bulletDamage = 5
 var pathName
 var currTargets = []
@@ -36,8 +36,8 @@ func Shoot():
 		get_node("BulletContainer").add_child(tempBullet)
 		tempBullet.global_position = $Aim.global_position
 		fire.visible = !fire.visible
-		fire_timer.start(0.2)
-
+		fire_timer.start(0.15)
+		
 func _on_tower_body_entered(body: Node2D) -> void:
 	if body.name == "ManGreen":
 		var tempArray = []
@@ -57,7 +57,7 @@ func _on_tower_body_entered(body: Node2D) -> void:
 		
 		curr = currTarget
 		pathName = currTarget.get_parent().name
-
+		
 func _on_tower_body_exited(_body):
 	currTargets = get_node("Tower").get_overlapping_bodies()
 
@@ -94,8 +94,8 @@ func _on_upgrade_pressed() -> void:
 		
 	if timesDone <= 4:
 		#reload speed
-		reload += 0.5
-		timer.wait_time = 3 - reload
+		reload += 0.15
+		timer.wait_time = 0.8 - reload
 		# power
 		bulletDamage += 3
 		
@@ -105,6 +105,7 @@ func _on_upgrade_pressed() -> void:
 	#print("reload: " + str(reload))
 	#print("damage: " + str(bulletDamage))
 	#print("------------------------------------------------")
+
 
 func _on_fire_timer_timeout() -> void:
 	fire.visible = !fire.visible

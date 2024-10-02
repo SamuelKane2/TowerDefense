@@ -1,18 +1,18 @@
-[gd_scene load_steps=15 format=3 uid="uid://d1jtbvh4osqff"]
+[gd_scene load_steps=15 format=3 uid="uid://cjyytxy2lp65a"]
 
-[ext_resource type="Script" path="res://scripts/turrets/green_turret.gd" id="1_j750v"]
-[ext_resource type="Texture2D" uid="uid://cfiptdwsuk38l" path="res://assets/Turrets/MediumFire.png" id="2_0cvq7"]
-[ext_resource type="Script" path="res://scripts/turrets/collision.gd" id="2_h6f43"]
-[ext_resource type="Texture2D" uid="uid://m67u38esv5e1" path="res://assets/Turrets/GreenTurret.png" id="2_mvkhj"]
-[ext_resource type="Script" path="res://scripts/turrets/bullets/progress_bar.gd" id="4_ilvw3"]
+[ext_resource type="Script" path="res://scripts/turrets/red_turret.gd" id="1_h4vhf"]
+[ext_resource type="Texture2D" uid="uid://btudodw65rnv0" path="res://assets/Turrets/RedTurret.png" id="1_yo0j8"]
+[ext_resource type="Script" path="res://scripts/turrets/collision.gd" id="3_w0orw"]
+[ext_resource type="Script" path="res://scripts/turrets/bullets/progress_bar.gd" id="4_hhch4"]
+[ext_resource type="Texture2D" uid="uid://cj4j80hglt4qp" path="res://assets/Turrets/BigFire.png" id="4_tvm65"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fj2h"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6j57"]
 size = Vector2(55, 45.7143)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qyi42"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_1itnx"]
 radius = 122.145
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_get0l"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qcar"]
 bg_color = Color(1, 0.298039, 0, 1)
 corner_radius_top_left = 1024
 corner_radius_top_right = 1024
@@ -20,7 +20,7 @@ corner_radius_bottom_right = 1024
 corner_radius_bottom_left = 1024
 corner_detail = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_egloj"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gdcr"]
 bg_color = Color(0.717647, 0.717647, 0.717647, 1)
 border_width_left = 5
 border_width_top = 5
@@ -32,9 +32,9 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u0kyj"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_evo3l"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h07al"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ua57a"]
 bg_color = Color(0.717647, 0.717647, 0.717647, 1)
 border_width_left = 3
 border_width_top = 3
@@ -42,7 +42,7 @@ border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.601223, 0.601223, 0.601223, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c45tx"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qag43"]
 bg_color = Color(0.564962, 0.564962, 0.564961, 1)
 border_width_left = 3
 border_width_top = 3
@@ -50,38 +50,38 @@ border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.6, 0.6, 0.6, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vryra"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mq0nc"]
 bg_color = Color(0.717647, 0.717647, 0.717647, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwj4o"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bidj"]
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.501961, 0.501961, 0.501961, 1)
 
-[node name="GreenTurret" type="StaticBody2D"]
+[node name="RedTurret" type="StaticBody2D"]
 scale = Vector2(1.4, 1.4)
 input_pickable = true
-script = ExtResource("1_j750v")
+script = ExtResource("1_h4vhf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.07143, 1.70299e-07)
 scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_2fj2h")
+shape = SubResource("RectangleShape2D_g6j57")
 
 [node name="Aim" type="Marker2D" parent="."]
 position = Vector2(24, 0)
 
 [node name="BigRocketStand" type="Sprite2D" parent="."]
 rotation = 1.5708
-texture = ExtResource("2_mvkhj")
+texture = ExtResource("1_yo0j8")
 
 [node name="Tower" type="Area2D" parent="."]
 
 [node name="Collision" type="CollisionShape2D" parent="Tower"]
-shape = SubResource("CircleShape2D_qyi42")
-script = ExtResource("2_h6f43")
+shape = SubResource("CircleShape2D_1itnx")
+script = ExtResource("3_w0orw")
 
 [node name="BulletContainer" type="Node" parent="."]
 
@@ -95,7 +95,7 @@ offset_left = -3.05176e-05
 offset_top = -3.05176e-05
 offset_right = 260.0
 offset_bottom = 260.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_get0l")
+theme_override_styles/panel = SubResource("StyleBoxFlat_0qcar")
 
 [node name="Upgrade" type="Node" parent="."]
 
@@ -107,7 +107,7 @@ offset_left = -40.0
 offset_top = -128.0
 offset_right = 40.0
 offset_bottom = -48.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_egloj")
+theme_override_styles/panel = SubResource("StyleBoxFlat_4gdcr")
 
 [node name="Upgrade" type="Button" parent="Upgrade/Upgrade/Panel"]
 layout_mode = 0
@@ -115,10 +115,10 @@ offset_left = 16.0
 offset_top = 9.0
 offset_right = 64.0
 offset_bottom = 56.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_u0kyj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_h07al")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_c45tx")
-theme_override_styles/normal = SubResource("StyleBoxFlat_vryra")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_evo3l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ua57a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qag43")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mq0nc")
 
 [node name="Label" type="Label" parent="Upgrade/Upgrade/Panel"]
 layout_mode = 0
@@ -142,7 +142,7 @@ offset_left = -63.0
 offset_top = -55.0
 offset_right = 68.0
 offset_bottom = -28.0
-script = ExtResource("4_ilvw3")
+script = ExtResource("4_hhch4")
 
 [node name="Timer" type="Timer" parent="ProgressBar"]
 wait_time = 2.0
@@ -156,7 +156,7 @@ offset_left = 16.0
 offset_top = 38.0
 offset_right = 35.0
 offset_bottom = 52.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_pwj4o")
+theme_override_styles/panel = SubResource("StyleBoxFlat_6bidj")
 
 [node name="UpgradeLabel" type="Label" parent="UpgradedLevel/UpgradedLevel/UpgradePanel"]
 layout_mode = 0
@@ -169,13 +169,12 @@ text = "I"
 
 [node name="Fire" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(42.8571, -0.714286)
+position = Vector2(36.4286, -5.89317e-13)
 rotation = 1.5708
-scale = Vector2(1, 1)
-texture = ExtResource("2_0cvq7")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_tvm65")
 
 [node name="FireTimer" type="Timer" parent="."]
-wait_time = 3.0
 one_shot = true
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

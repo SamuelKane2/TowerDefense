@@ -2,45 +2,11 @@ extends StaticBody2D
 
 class_name BulletTower
 
-var bulletDamange = 5
-var pathName
-var currTargets = []
-var curr
-
-@export var Bullet: PackedScene
-
-func _process(_delta):
-	if is_instance_valid(curr):
-		self.look_at(curr.global_position)
-	else:
-		for i in get_node("BulletContainer").get_child_count():
-			get_node("BulletContainer").get_child(i).queue_free()
-
-func _on_tower_body_entered(body: Node2D) -> void:
-	if body.name == "ManGreen":
-		var tempArray = []
-		currTargets = get_node("Tower").get_overlapping_bodies()
-		
-		for i in currTargets:
-			if "ManGreen" in i.name:
-				tempArray.append(i)
-		var currTarget = null
-		
-		for i in tempArray:
-			if currTarget == null:
-				currTarget = i.get_node("../")
-			else:
-				if i.get_parent().get_progress() > currTarget.get_progress():
-					currTarget = i.get_node("../")
-		
-		curr = currTarget
-		pathName = currTarget.get_parent().name
-		
-		var tempBullet = Bullet.instantiate()
-		tempBullet.pathName = pathName
-		tempBullet.bulletDamage = bulletDamange
-		get_node("BulletContainer").add_child(tempBullet)
-		tempBullet.global_position = $Aim.global_position
-		
-func _on_tower_body_exited(_body):
-	currTargets = get_node("Tower").get_overlapping_bodies()
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_mask == 1 and event.button_index == 1:
+		var towerPath = get_parent().get_parent().get_child(2)
+		#get_node("Range").visible = !get_node("Range").visible
+		for i in towerPath.get_child_count():
+			if towerPath.get_child(i).name != self.name:
+				towerPath.get_child(i).get_node("Upgrade/Upgrade").hide()
+		get_node("Upgrade/Upgrade").visible = !get_node("Upgrade/Upgrade").visible
