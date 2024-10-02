@@ -1,7 +1,7 @@
 extends BulletTower
 
 var Bullet = preload("res://scenes/Turrets/InvisibleBullet.tscn")
-var bulletDamage = 5
+var bulletDamage = 20
 var pathName
 var currTargets = []
 var curr
@@ -94,10 +94,10 @@ func _on_upgrade_pressed() -> void:
 		
 	if timesDone <= 4:
 		#reload speed
-		reload += 0.5
-		timer.wait_time = 3 - reload
+		reload += 0.25
+		timer.wait_time = 5 - reload
 		# power
-		bulletDamage += 3
+		bulletDamage += 5
 		
 	else:
 		pass

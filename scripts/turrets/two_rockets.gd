@@ -89,8 +89,8 @@ func _on_upgrade_pressed() -> void:
 		
 	if timesDone <= 4:
 		#reload speed
-		reload += 0.3
-		timer.wait_time = 2 - reload
+		reload += 0.1
+		timer.wait_time = 1 - reload
 		# power
 		bulletDamage += 3
 		

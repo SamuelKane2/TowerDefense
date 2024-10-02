@@ -10,7 +10,7 @@
 size = Vector2(55, 45.7143)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qyi42"]
-radius = 122.145
+radius = 152.872
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_get0l"]
 bg_color = Color(1, 0.298039, 0, 1)
@@ -67,7 +67,6 @@ script = ExtResource("1_j750v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.07143, 1.70299e-07)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_2fj2h")
 
 [node name="Aim" type="Marker2D" parent="."]
@@ -145,7 +144,7 @@ offset_bottom = -28.0
 script = ExtResource("4_ilvw3")
 
 [node name="Timer" type="Timer" parent="ProgressBar"]
-wait_time = 2.0
+wait_time = 5.0
 
 [node name="UpgradedLevel" type="Node" parent="."]
 
@@ -171,7 +170,6 @@ text = "I"
 visible = false
 position = Vector2(42.8571, -0.714286)
 rotation = 1.5708
-scale = Vector2(1, 1)
 texture = ExtResource("2_0cvq7")
 
 [node name="FireTimer" type="Timer" parent="."]

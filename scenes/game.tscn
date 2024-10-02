@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3dlrmykoub1w"]
+[gd_scene load_steps=8 format=3 uid="uid://c3dlrmykoub1w"]
 
 [ext_resource type="Texture2D" uid="uid://c8y4ulft5tyr7" path="res://assets/towerDefense_tilesheet.png" id="1_1xgvt"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_cofg5"]
 [ext_resource type="Script" path="res://scripts/Enemies & UI/path_spawner.gd" id="2_4q3q5"]
 [ext_resource type="PackedScene" uid="uid://c1bi7gjbdwbxg" path="res://scenes/UI.tscn" id="4_6d3bs"]
 [ext_resource type="PackedScene" uid="uid://2j2sd0phkq6m" path="res://scenes/BuildingPlot.tscn" id="4_bgmca"]
@@ -4371,6 +4372,7 @@ sources/0 = SubResource("TileSetAtlasSource_chqs8")
 
 [node name="Game" type="Node2D"]
 position = Vector2(576, 325)
+script = ExtResource("1_cofg5")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(0.75, 0.75)
@@ -4418,4 +4420,10 @@ offset_top = -326.0
 offset_right = -513.0
 offset_bottom = -293.0
 
+[node name="BeginningTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="BeginningTimer" to="." method="_on_beginning_timer_timeout"]

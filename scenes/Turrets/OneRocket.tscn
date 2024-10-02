@@ -139,7 +139,7 @@ offset_bottom = -28.0
 script = ExtResource("3_2lwvi")
 
 [node name="Timer" type="Timer" parent="ProgressBar"]
-wait_time = 2.0
+wait_time = 4.0
 
 [node name="UpgradedLevel" type="Node" parent="."]
 

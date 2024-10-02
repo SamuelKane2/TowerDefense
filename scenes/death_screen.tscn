@@ -1,9 +1,39 @@
-[gd_scene format=3 uid="uid://cvxvrtftrpi10"]
+[gd_scene load_steps=2 format=3 uid="uid://cvxvrtftrpi10"]
+
+[ext_resource type="Script" path="res://scenes/death_screen.gd" id="1_dd5m0"]
 
 [node name="DeathScreen" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dd5m0")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 104.0
+offset_right = 784.0
+offset_bottom = 187.0
+theme_override_font_sizes/font_size = 60
+text = "YOU FAILED"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 304.0
+offset_right = 832.0
+offset_bottom = 408.0
+theme_override_font_sizes/font_size = 60
+text = "Restart"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

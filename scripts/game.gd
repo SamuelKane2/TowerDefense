@@ -7,3 +7,4 @@ func _process(delta):
 	if health <= 0:
 		pass
 		#Death screen
+		
