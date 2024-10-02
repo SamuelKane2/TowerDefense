@@ -83,21 +83,21 @@ offset_bottom = 116.0
 text = "150"
 horizontal_alignment = 1
 
-[node name="GreenTurret" type="Node2D" parent="Build/Build"]
+[node name="GreenGun" type="Node2D" parent="Build/Build"]
 
-[node name="GreenTurretPanel" type="Panel" parent="Build/Build/GreenTurret"]
+[node name="Panel4" type="Panel" parent="Build/Build/GreenGun"]
 offset_left = -120.0
 offset_top = -120.0
 offset_right = -40.0
 offset_bottom = -40.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_i0fa1")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Build/Build/GreenTurret"]
+[node name="Sprite2D2" type="Sprite2D" parent="Build/Build/GreenGun"]
 position = Vector2(-80, -88)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("4_d4bbd")
 
-[node name="Label7" type="Label" parent="Build/Build/GreenTurret"]
+[node name="Label7" type="Label" parent="Build/Build/GreenGun"]
 offset_left = -112.0
 offset_top = -67.0
 offset_right = -48.0
@@ -105,21 +105,21 @@ offset_bottom = -44.0
 text = "100"
 horizontal_alignment = 1
 
-[node name="RedTurret" type="Node2D" parent="Build/Build"]
+[node name="RedGun" type="Node2D" parent="Build/Build"]
 
-[node name="RedTurretPanel" type="Panel" parent="Build/Build/RedTurret"]
+[node name="Panel3" type="Panel" parent="Build/Build/RedGun"]
 offset_left = 40.0
 offset_top = -120.0
 offset_right = 120.0
 offset_bottom = -40.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_i0fa1")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Build/Build/RedTurret"]
+[node name="Sprite2D3" type="Sprite2D" parent="Build/Build/RedGun"]
 position = Vector2(80, -89)
 scale = Vector2(0.88, 0.88)
 texture = ExtResource("5_mvra7")
 
-[node name="Label5" type="Label" parent="Build/Build/RedTurret"]
+[node name="Label5" type="Label" parent="Build/Build/RedGun"]
 offset_left = 48.0
 offset_top = -67.0
 offset_right = 112.0
@@ -130,5 +130,3 @@ horizontal_alignment = 1
 [connection signal="gui_input" from="Panel" to="." method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Build/Build/OneRocket/OneRocketPanel" to="." method="_on_one_rocket_panel_gui_input"]
 [connection signal="gui_input" from="Build/Build/TwoRockets/TwoTocketsPanel" to="." method="_on_two_tockets_panel_gui_input"]
-[connection signal="gui_input" from="Build/Build/GreenTurret/GreenTurretPanel" to="." method="_on_panel_4_gui_input"]
-[connection signal="gui_input" from="Build/Build/RedTurret/RedTurretPanel" to="." method="_on_red_turret_panel_gui_input"]

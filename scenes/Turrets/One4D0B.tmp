@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpbi8ujgo6m3j"]
+
+[ext_resource type="Script" path="res://scripts/turrets/one_rocket.gd" id="1_8caun"]
+[ext_resource type="Texture2D" uid="uid://dr2034urlamv1" path="res://assets/Turrets/1Rocket.png" id="2_rdxgw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxhr4"]
+size = Vector2(36, 36)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ah00k"]
+radius = 130.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hafo"]
+bg_color = Color(1, 0.298039, 0, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+corner_detail = 20
+
+[node name="OneRocket" type="StaticBody2D"]
+scale = Vector2(1.4, 1.4)
+script = ExtResource("1_8caun")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sxhr4")
+
+[node name="Aim" type="Marker2D" parent="."]
+position = Vector2(24, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_rdxgw")
+
+[node name="Tower" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tower"]
+shape = SubResource("CircleShape2D_ah00k")
+
+[node name="BulletContainer" type="Node" parent="."]
+
+[node name="Area" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0, 0, 0, 0.313726)
+offset_left = -130.0
+offset_top = -130.0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7hafo")
+
+[connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
+[connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]

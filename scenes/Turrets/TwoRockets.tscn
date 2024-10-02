@@ -1,0 +1,173 @@
+[gd_scene load_steps=14 format=3 uid="uid://3abmq6wyepeh"]
+
+[ext_resource type="Script" path="res://scripts/turrets/two_rockets.gd" id="1_h4php"]
+[ext_resource type="Texture2D" uid="uid://c4grry5j7tvtl" path="res://assets/Turrets/2RocketBig.png" id="2_kmnco"]
+[ext_resource type="Script" path="res://scripts/turrets/collision.gd" id="3_k0fnn"]
+[ext_resource type="Script" path="res://scripts/turrets/bullets/progress_bar.gd" id="4_qvjbp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4oso2"]
+size = Vector2(34.2857, 45.7143)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lc7qk"]
+radius = 122.145
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tj1ti"]
+bg_color = Color(1, 0.298039, 0, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ib22q"]
+bg_color = Color(0.717647, 0.717647, 0.717647, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.501961, 0.501961, 0.501961, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kl3ns"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3274j"]
+bg_color = Color(0.717647, 0.717647, 0.717647, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.601223, 0.601223, 0.601223, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ebyx"]
+bg_color = Color(0.564962, 0.564962, 0.564961, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.6, 0.6, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cinm5"]
+bg_color = Color(0.717647, 0.717647, 0.717647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38wvj"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.501961, 0.501961, 0.501961, 1)
+
+[node name="TwoRockets" type="StaticBody2D"]
+scale = Vector2(1.4, 1.4)
+input_pickable = true
+script = ExtResource("1_h4php")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.40598e-07, 1.70299e-07)
+shape = SubResource("RectangleShape2D_4oso2")
+
+[node name="Aim" type="Marker2D" parent="."]
+position = Vector2(24, 0)
+
+[node name="BigRocketStand" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_kmnco")
+
+[node name="Tower" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Tower"]
+shape = SubResource("CircleShape2D_lc7qk")
+script = ExtResource("3_k0fnn")
+
+[node name="BulletContainer" type="Node" parent="."]
+
+[node name="Range" type="Node2D" parent="."]
+visible = false
+position = Vector2(-130, -130)
+
+[node name="Area" type="Panel" parent="Range"]
+modulate = Color(0, 0, 0, 0.313726)
+offset_left = -3.05176e-05
+offset_top = -3.05176e-05
+offset_right = 260.0
+offset_bottom = 260.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tj1ti")
+
+[node name="Upgrade" type="Node" parent="."]
+
+[node name="Upgrade" type="Node2D" parent="Upgrade"]
+visible = false
+
+[node name="Panel" type="Panel" parent="Upgrade/Upgrade"]
+offset_left = -40.0
+offset_top = -128.0
+offset_right = 40.0
+offset_bottom = -48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ib22q")
+
+[node name="Upgrade" type="Button" parent="Upgrade/Upgrade/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 9.0
+offset_right = 64.0
+offset_bottom = 56.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kl3ns")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3274j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5ebyx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cinm5")
+
+[node name="Label" type="Label" parent="Upgrade/Upgrade/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 54.0
+offset_right = 64.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 16
+text = "200"
+horizontal_alignment = 1
+
+[node name="Polygon2D" type="Polygon2D" parent="Upgrade/Upgrade/Panel"]
+position = Vector2(31.5625, 52)
+scale = Vector2(1.07031, 1)
+color = Color(0.589096, 0.589096, 0.589095, 1)
+polygon = PackedVector2Array(-1.90735e-06, -1.52588e-05, -1.90735e-06, -24, -8, -24, 8, -40, 24, -24, 16, -24, 16, -1.52588e-05)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = -63.0
+offset_top = -55.0
+offset_right = 68.0
+offset_bottom = -28.0
+script = ExtResource("4_qvjbp")
+
+[node name="Timer" type="Timer" parent="ProgressBar"]
+wait_time = 2.0
+
+[node name="UpgradedLevel" type="Node" parent="."]
+
+[node name="UpgradedLevel" type="Node2D" parent="UpgradedLevel"]
+
+[node name="UpgradePanel" type="Panel" parent="UpgradedLevel/UpgradedLevel"]
+offset_left = 16.0
+offset_top = 38.0
+offset_right = 35.0
+offset_bottom = 52.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_38wvj")
+
+[node name="UpgradeLabel" type="Label" parent="UpgradedLevel/UpgradedLevel/UpgradePanel"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -3.0
+offset_right = 47.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 14
+text = "I"
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
+[connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
+[connection signal="ready" from="Tower" to="." method="_on_tower_ready"]
+[connection signal="pressed" from="Upgrade/Upgrade/Panel/Upgrade" to="." method="_on_upgrade_pressed"]
+[connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
