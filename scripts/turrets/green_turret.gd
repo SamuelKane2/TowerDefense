@@ -76,21 +76,21 @@ func _on_upgrade_pressed() -> void:
 	if timesDone == 1:
 		upgrade_label.text = "II"
 		upgrade_label.global_position = self.position + Vector2(597,363)
-		Game.gold -= 250
+		Game.gold -= 200
 		
 	if timesDone == 2:
 		upgrade_label.text = "III"
 		upgrade_label.global_position = self.position + Vector2(595,363)
-		Game.gold -= 250
+		Game.gold -= 200
 		
 	if timesDone == 3:
 		upgrade_label.text = "IV"
-		Game.gold -= 250
+		Game.gold -= 200
 		
 	if timesDone == 4:
 		upgrade_label.text = "V"
 		upgrade_label.global_position = self.position + Vector2(597,363)
-		Game.gold -= 250
+		Game.gold -= 200
 		
 	if timesDone <= 4:
 		#reload speed

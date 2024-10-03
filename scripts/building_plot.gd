@@ -41,8 +41,8 @@ var GreenTurretScene = preload("res://scenes/Turrets/GreenTurret.tscn")
 
 func _on_panel_4_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_mask == 1 and event.button_index == 1:
-		if Game.gold >= 150:
-			Game.gold -= 150
+		if Game.gold >= 100:
+			Game.gold -= 100
 			var tempTower = GreenTurretScene.instantiate()
 			get_parent().get_parent().get_node("Towers").add_child(tempTower)
 			tempTower.get_node("Range").visible = false
