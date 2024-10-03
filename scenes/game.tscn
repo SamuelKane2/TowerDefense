@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3dlrmykoub1w"]
+[gd_scene load_steps=9 format=3 uid="uid://c3dlrmykoub1w"]
 
 [ext_resource type="Texture2D" uid="uid://c8y4ulft5tyr7" path="res://assets/towerDefense_tilesheet.png" id="1_1xgvt"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_cofg5"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c1bi7gjbdwbxg" path="res://scenes/UI.tscn" id="4_6d3bs"]
 [ext_resource type="PackedScene" uid="uid://2j2sd0phkq6m" path="res://scenes/BuildingPlot.tscn" id="4_bgmca"]
 [ext_resource type="PackedScene" uid="uid://cvxvrtftrpi10" path="res://scenes/death_screen.tscn" id="6_i1xtu"]
-[ext_resource type="Script" path="res://scenes/wave.gd" id="7_bljab"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_chqs8"]
 texture = ExtResource("1_1xgvt")
@@ -4464,8 +4463,7 @@ offset_top = 50.0
 offset_right = 249.0
 offset_bottom = 180.0
 theme_override_font_sizes/font_size = 20
-text = "Wave: 20"
-script = ExtResource("7_bljab")
+text = "Wave: 1"
 
 [node name="WarningTimer" type="Timer" parent="."]
 wait_time = 5.0
