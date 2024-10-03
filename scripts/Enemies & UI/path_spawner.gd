@@ -5,3 +5,8 @@ extends Node2D
 func _on_timer_timeout():
 	var tempPath = path.instantiate()
 	add_child(tempPath)
+	
+@onready var enemy_timer: Timer = $EnemyTimer
+
+func _on_wave_time_timeout() -> void:
+	enemy_timer.stop()

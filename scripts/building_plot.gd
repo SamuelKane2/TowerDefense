@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 func _on_panel_gui_input(event: InputEvent) -> void:
+	print("test")
 	if event is InputEventMouseButton and event.button_mask == 1 and event.button_index == 1:
 		var towerPath = get_parent().get_parent().get_child(3)
 		for i in towerPath.get_child_count():
