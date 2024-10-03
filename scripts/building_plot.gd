@@ -1,7 +1,6 @@
 extends StaticBody2D
 
 func _on_panel_gui_input(event: InputEvent) -> void:
-	print("test")
 	if event is InputEventMouseButton and event.button_mask == 1 and event.button_index == 1:
 		var towerPath = get_parent().get_parent().get_child(3)
 		for i in towerPath.get_child_count():
@@ -23,6 +22,7 @@ func _on_one_rocket_panel_gui_input(event: InputEvent) -> void:
 			get_node("Build").get_parent().visible = false
 			get_node("Build/Build").visible = false
 		
+		
 var TwoRocketsScene = preload("res://scenes/Turrets/TwoRockets.tscn")
 
 func _on_two_tockets_panel_gui_input(event: InputEvent) -> void:
@@ -35,6 +35,7 @@ func _on_two_tockets_panel_gui_input(event: InputEvent) -> void:
 			tempTower.position = self.position
 			get_node("Build").get_parent().visible = false
 			get_node("Build/Build").visible = false
+
 
 var GreenTurretScene = preload("res://scenes/Turrets/GreenTurret.tscn")
 
@@ -49,8 +50,8 @@ func _on_panel_4_gui_input(event: InputEvent) -> void:
 			get_node("Build").get_parent().visible = false
 			get_node("Build/Build").visible = false
 
-var RedTurretScene = preload("res://scenes/Turrets/RedTurret.tscn")
 
+var RedTurretScene = preload("res://scenes/Turrets/RedTurret.tscn")
 
 func _on_red_turret_panel_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_mask == 1 and event.button_index == 1:

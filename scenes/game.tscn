@@ -4391,6 +4391,16 @@ wait_time = 0.5
 
 [node name="Towers" type="Node2D" parent="."]
 
+[node name="1stWaveTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="BeginningTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
 [node name="BuildingPlots" type="Node2D" parent="."]
 
 [node name="BuildingPlot" parent="BuildingPlots" instance=ExtResource("4_bgmca")]
@@ -4414,31 +4424,17 @@ position = Vector2(336, -213)
 [node name="BuildingPlot8" parent="BuildingPlots" instance=ExtResource("4_bgmca")]
 position = Vector2(-200, -101)
 
-[node name="WaveTime" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
-autostart = true
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="UI" parent="CanvasLayer" instance=ExtResource("4_6d3bs")]
-offset_top = -1.0
-offset_right = 63.0
-offset_bottom = 32.0
-
 [node name="DeathScreen" parent="CanvasLayer" instance=ExtResource("6_i1xtu")]
-unique_name_in_owner = true
 visible = false
-offset_left = -2.0
-offset_top = -2.0
-offset_right = -2.0
-offset_bottom = -2.0
+offset_left = -1.0
+offset_right = -1.0
 
-[node name="BeginningTimer" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
-autostart = true
+[node name="UI" parent="CanvasLayer" instance=ExtResource("4_6d3bs")]
+offset_right = -971.0
+offset_bottom = -597.0
 
 [connection signal="timeout" from="PathSpawner/EnemyTimer" to="PathSpawner" method="_on_timer_timeout"]
-[connection signal="timeout" from="WaveTime" to="PathSpawner" method="_on_wave_time_timeout"]
+[connection signal="timeout" from="1stWaveTimer" to="." method="_on_st_wave_timer_timeout"]
 [connection signal="timeout" from="BeginningTimer" to="." method="_on_beginning_timer_timeout"]
