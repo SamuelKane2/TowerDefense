@@ -4,36 +4,41 @@ extends Control
 @onready var warning_panel: Panel = $"../WarningPanel"
 @onready var warning_label: Label = $"../WarningLabel"
 
+@onready var death_timer: Timer = $DeathTimer
+@onready var warning_timer: Timer = $"../../WarningTimer"
+@onready var beginning_timer: Timer = $"../../BeginningTimer"
+@onready var enemy_timer: Timer = $"../../PathSpawner/EnemyTimer"
+@onready var _1_st_wave_timer: Timer = $"../../1stWaveTimer"
+@onready var normal_wave_timer: Timer = $"../../NormalWaveTimer"
+
 func _on_button_pressed() -> void:
-	get_tree().paused = false
+	enemy_timer.stop()
+	_1_st_wave_timer.stop()
+	normal_wave_timer.stop()
+	Game.health = 20
 	death_screen.visible = false
 	warning_label.visible = true
 	warning_panel.visible = true
 	warning_timer.start(5)
-	for i in get_tree().get_child(1):
+	
+	for i in get_parent().get_parent().get_child(1).get_children():
 			if "EnemyTimer" not in i.name:
 				queue_free()
-				
-@onready var death_timer: Timer = $DeathTimer
-			
-@onready var warning_timer: Timer = $"../../WarningTimer"
-@onready var beginning_timer: Timer = $"../../BeginningTimer"
 
 func _process(delta):
 	if Game.health <= 19:
 		death_screen.visible = true
-		get_tree().paused = true
+		Game.health = 0
 
-func _on_death_timer_timeout() -> void:
-	print("Death Timer timeout")
-	get_tree().paused = false
-	death_screen.visible = false
-	warning_label.visible = true
-	warning_panel.visible = true
-	warning_timer.start(5)
-	for i in get_tree().get_child(1).get_children():
-			if "EnemyTimer" not in i.name:
-				i.queue_free()
+#func _on_death_timer_timeout() -> void:
+#	print("Death Timer timeout")
+#	death_screen.visible = false
+#	warning_label.visible = true
+#	warning_panel.visible = true
+#	warning_timer.start(5)
+#	for i in get_tree().get_child(1).get_children():
+#			if "EnemyTimer" not in i.name:
+#				i.queue_free()
 				
 				
 				
