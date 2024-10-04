@@ -1,6 +1,6 @@
 extends Node
 
-var gold = 300
+var gold = 3000
 var health = 20
 
 @onready var beginning_timer: Timer = $BeginningTimer
@@ -8,7 +8,7 @@ var health = 20
 @onready var _1_st_wave_timer: Timer = $"1stWaveTimer"
 @onready var normal_wave_timer: Timer = $NormalWaveTimer
 
-var waveSize = 3
+var waveSize = 15
 var waveNumber = 1
 @onready var wave: Label = $CanvasLayer/Wave
 
@@ -17,20 +17,20 @@ var waveNumber = 1
 @onready var warning_timer: Timer = $WarningTimer
 
 func _on_normal_wave_timer_timeout() -> void:
-	enemy_timer.start(1)
+	enemy_timer.start(5)
 	_1_st_wave_timer.start(waveSize)
 	wave.text = "Wave: " + str(waveNumber)
 	print("Wave Number: " + str(waveNumber))
 	
 func _on_beginning_timer_timeout() -> void:
-	enemy_timer.start(1)
+	enemy_timer.start(5)
 	_1_st_wave_timer.start(waveSize)
 
 func _on_st_wave_timer_timeout() -> void:
 	enemy_timer.stop()
 	normal_wave_timer.start(15)
-	waveSize += 2
-	waveNumber += 1
+	waveSize += 1
+	waveNumber += 3
 
 func _on_warning_timer_timeout() -> void:
 	warning_label.visible = false

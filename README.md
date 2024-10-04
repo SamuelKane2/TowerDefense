@@ -8,5 +8,4 @@ Reflections:
 	The guy in the tutorial I followed included reload bar for the towers, but I thought that looked really bad so I didn't include it.
 	
 	I also decided to not create three different types of enemies and to instead go for the bonus of upgrading towers, mostly because I didn't have enough time.
- 
-i8
+	

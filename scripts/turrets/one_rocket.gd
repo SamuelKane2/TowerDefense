@@ -93,7 +93,6 @@ func _on_upgrade_pressed() -> void:
 		timer.wait_time = 4 - reload
 		# power
 		bulletDamage += 8
-		
 	else:
 		pass
 	#print("timesDone: " + str(timesDone))
