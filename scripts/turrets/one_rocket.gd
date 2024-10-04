@@ -68,21 +68,21 @@ var timesDone = 0
 func _on_upgrade_pressed() -> void:
 
 	timesDone += 1
-	if timesDone == 1:
+	if timesDone == 1 and Game.gold >= 200:
 		upgrade_label.text = "II"
 		upgrade_label.global_position = self.position + Vector2(601,355)
 		Game.gold -= 200
 		
-	if timesDone == 2:
+	if timesDone == 2 and Game.gold >= 200:
 		upgrade_label.text = "III"
 		upgrade_label.global_position = self.position + Vector2(599,355)
 		Game.gold -= 200
 		
-	if timesDone == 3:
+	if timesDone == 3 and Game.gold >= 200:
 		upgrade_label.text = "IV"
 		Game.gold -= 200
 		
-	if timesDone == 4:
+	if timesDone == 4 and Game.gold >= 200:
 		upgrade_label.text = "V"
 		upgrade_label.global_position = self.position + Vector2(601,355)
 		Game.gold -= 200
