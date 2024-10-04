@@ -4399,7 +4399,6 @@ one_shot = true
 one_shot = true
 
 [node name="BeginningTimer" type="Timer" parent="."]
-wait_time = 20.0
 one_shot = true
 autostart = true
 
@@ -4432,6 +4431,9 @@ position = Vector2(-200, -101)
 visible = false
 offset_left = -1.0
 offset_right = -1.0
+
+[node name="DeathTimer" type="Timer" parent="CanvasLayer/DeathScreen"]
+wait_time = 5.0
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("4_6d3bs")]
 offset_right = -1021.0
@@ -4474,4 +4476,5 @@ autostart = true
 [connection signal="timeout" from="1stWaveTimer" to="." method="_on_st_wave_timer_timeout"]
 [connection signal="timeout" from="NormalWaveTimer" to="." method="_on_normal_wave_timer_timeout"]
 [connection signal="timeout" from="BeginningTimer" to="." method="_on_beginning_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/DeathScreen/DeathTimer" to="CanvasLayer/DeathScreen" method="_on_death_timer_timeout"]
 [connection signal="timeout" from="WarningTimer" to="." method="_on_warning_timer_timeout"]
